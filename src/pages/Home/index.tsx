@@ -8,13 +8,13 @@ const demoData = {
     {
       title: "Tests",
       tests: [
-        { title: "A1", status: "done [30/30]" },
-        { title: "A2", status: "done [28/30]" },
-        { title: "B1.1", status: "new" },
-        { title: "B1.2", status: "new" },
-        { title: "B2.1", status: "new" },
-        { title: "B2.2", status: "difficult" },
-        { title: "C1", status: "hard" },
+        { id: 1, title: "A1", status: "✅ done [30/30] ✅" },
+        { id: 2, title: "A2", status: "✅ done [28/30] ✅" },
+        { id: 3, title: "B1.1", status: "🎈 new 🎈" },
+        { id: 4, title: "B1.2", status: "🎈 new 🎈" },
+        { id: 5, title: "B2.1", status: "🎈 new 🎈" },
+        { id: 6, title: "B2.2", status: "🔥 difficult 🔥" },
+        { id: 7, title: "C1", status: "💪 hard 💪" },
       ],
     },
   ],
@@ -27,34 +27,10 @@ const Home: React.FC = () => {
         <div className={styles.testSet}>
           <h2 className={styles.setTitle}>{set.title}</h2>
           <div className={styles.tests}>
-            {set.tests.map(test => <TestItem title={test.title} status={test.status}/>)}
+            {set.tests.map(test => <TestItem id={test.id} title={test.title} status={test.status}/>)}
           </div>
         </div>
       ))}
-      {/* <div className={styles.testSet}>
-        <h2 className={styles.setTitle}>by topics</h2>
-        <TestItem />
-        <TestItem />
-        <TestItem />
-        <TestItem />
-        <TestItem />
-      </div> */}
-      {/* <div className={styles.set}>
-        <h2 className={styles.setTitle}>grammar</h2>
-        <TestItem />
-        <TestItem />
-        <TestItem />
-        <TestItem />
-        <TestItem />
-      </div> */}
-      {/* <div className={styles.set}>
-        <h2 className={styles.setTitle}>vocabulary</h2>
-        <TestItem />
-        <TestItem />
-        <TestItem />
-        <TestItem />
-        <TestItem />
-      </div> */}
     </div>
   );
 };

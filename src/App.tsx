@@ -7,6 +7,7 @@ import TrainField from "./components/TrainField";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
+import Test from "./pages/Test";
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/test/:id" element={<Test />} />
       </Routes>
     </div>
   );
