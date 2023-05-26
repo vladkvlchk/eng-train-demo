@@ -1,10 +1,16 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import styles from "./Test.module.scss"
+import Timer from "../../components/Timer";
+import styles from "./Test.module.scss";
 
-const Test : React.FC = () => {
-    const { id } = useParams();
-    return (<div className="page">{id}</div>)
-}
+const Test: React.FC = () => {
 
-export default Test
+  return (
+    <div className={styles.page}>
+      <div className={styles.timer}><Timer /></div>
+      <div className={styles.quiz}></div>
+      <div className={styles.pagination}></div>
+    </div>
+  );
+};
+
+export default Test;
