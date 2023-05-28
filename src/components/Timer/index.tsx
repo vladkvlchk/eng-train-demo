@@ -19,7 +19,7 @@ const Timer: React.FC = () => {
 
     return () => clearInterval(interval);
   }, []);
-  if(!minutes && !seconds) {
+  if(minutes < 1 && seconds < 1) {
     return <Navigate to={'./result'} />
 
   }

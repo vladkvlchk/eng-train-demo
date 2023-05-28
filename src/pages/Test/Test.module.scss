@@ -1,16 +1,15 @@
 .page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #f4f4f4;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  min-height: 400px;
   min-width: 300px;
   border-radius: 17px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  margin-top: 24px;
+  margin: 24px;
   overflow-y: scroll;
 
   .timer{
@@ -20,5 +19,54 @@
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .task{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+
+    h4{
+      margin-top: 0;
+    }
+
+    .options{
+      input{
+        margin: 8px;
+        cursor: pointer;
+      }
+      label{
+        margin: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .control{
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    button{
+      border: 0;
+      width: 40%;
+      background-color: #f4f4f4;
+      cursor: pointer;
+
+      &:first-child{
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      &:last-child{
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
   }
 }
