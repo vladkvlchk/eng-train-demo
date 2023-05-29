@@ -1,7 +1,11 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-const Timer: React.FC = () => {
+interface TimerType{
+  onTimeOver: () => {}
+}
+
+const Timer: React.FC<TimerType> = ({onTimeOver}) => {
   const [minutes, setMinutes] = React.useState(30);
   const [seconds, setSeconds] = React.useState(0);
 
@@ -20,8 +24,8 @@ const Timer: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
   if(minutes < 1 && seconds < 1) {
-    return <Navigate to={'./result'} />
-
+    // return <Navigate to={'./result'} />
+    onTimeOver();
   }
   return <>{minutes}:{seconds > 9 ? seconds : "0" + seconds}</>;
 };

@@ -250,7 +250,7 @@ const Test: React.FC = () => {
     }
   };
 
-  const onFinish = () => {
+  const onFinish = () : any => {
     let result = 0;
     for (let i = 0; i < demoDataTest.tasks.length; i++) {
       if (demoDataTest.tasks[i].correctAnswer === answers[i]) {
@@ -263,7 +263,7 @@ const Test: React.FC = () => {
   return (
     <div className={styles.page}>
       <div className={styles.timer}>
-        <Timer />
+        {<Timer onTimeOver={onFinish}/>}
       </div>
       <div className={styles.task}>
         <div className={styles.questionContainer}>
