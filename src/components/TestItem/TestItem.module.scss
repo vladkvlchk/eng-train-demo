@@ -9,6 +9,11 @@
   cursor: pointer;
   color: rgb(40, 40, 40);
 
+  @media only screen and (max-width: 600px) {
+    background-color: #f4f4f4;
+    width: 80vw;
+  }
+
   &::before {
     position: absolute;
     background-color: black;

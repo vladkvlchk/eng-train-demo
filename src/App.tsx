@@ -19,7 +19,7 @@ const App: React.FC = () => {
           element={
             <>
               <Home />
-              <Account />
+              {/* <Account /> */}
             </>
           }
         />
