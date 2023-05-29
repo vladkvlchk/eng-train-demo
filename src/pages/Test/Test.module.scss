@@ -12,6 +12,10 @@
   margin: 24px;
   overflow-y: scroll;
 
+  @media only screen and (max-width: 600px) {
+    margin: 0;
+  }
+
   .timer{
     display: flex;
     width: 100%;
