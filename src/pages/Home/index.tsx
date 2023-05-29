@@ -6,6 +6,7 @@ import styles from "./Home.module.scss";
 const demoData = {
   sets: [
     {
+      id: 1,
       title: "Tests",
       tests: [
         { id: 1, title: "A1", status: "✅ done [30/30] ✅" },
@@ -24,10 +25,10 @@ const Home: React.FC = () => {
   return (
     <div className={styles.page}>
       {demoData.sets.map((set) => (
-        <div className={styles.testSet}>
+        <div key={set.id} className={styles.testSet}>
           <h2 className={styles.setTitle}>{set.title}</h2>
           <div className={styles.tests}>
-            {set.tests.map(test => <TestItem id={test.id} title={test.title} status={test.status}/>)}
+            {set.tests.map(test => <TestItem key={test.id} id={test.id} title={test.title} status={test.status}/>)}
           </div>
         </div>
       ))}
