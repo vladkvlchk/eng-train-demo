@@ -24,7 +24,6 @@ const Timer: React.FC<TimerType> = ({onTimeOver}) => {
     return () => clearInterval(interval);
   }, []);
   if(minutes < 1 && seconds < 1) {
-    // return <Navigate to={'./result'} />
     onTimeOver();
   }
   return <>{minutes}:{seconds > 9 ? seconds : "0" + seconds}</>;

@@ -1,11 +1,9 @@
 .page {
   background-color: #f4f4f4;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   min-height: 400px;
   min-width: 300px;
+  max-height: 90vh;
   border-radius: 17px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   margin-top: 24px;
@@ -15,25 +13,31 @@
     background-color: rgba(255, 255, 255, 0);
     width: calc(100% - 8px);
     margin-top: 4px;
+    max-height: calc(100vh - 4px);
   }
 
-  .testSet{
-    .setTitle{
-        margin-left: 12px;
+  @media only screen and (min-width: 600px) {
+    margin: 40px 10%;
+    width: 80%;
+  }
 
-        @media only screen and (max-width: 600px) {
-          text-align: center;
-        }
+  .testSet {
+    .setTitle {
+      margin-left: 12px;
+
+      @media only screen and (max-width: 600px) {
+        text-align: center;
+      }
     }
 
-    .tests{
-        display: flex;
-        flex-wrap: wrap;
+    .tests {
+      display: flex;
+      flex-wrap: wrap;
 
-        @media only screen and (max-width: 600px) {
-          flex-direction: column;
-          align-items: center;
-        }
+      @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 }

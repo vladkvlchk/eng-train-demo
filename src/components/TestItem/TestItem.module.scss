@@ -1,7 +1,7 @@
 .item {
   position: relative;
   width: 160px;
-  height: 80px;
+  min-height: 80px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   margin: 4px 8px;
