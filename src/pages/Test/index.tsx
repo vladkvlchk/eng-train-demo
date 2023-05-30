@@ -293,7 +293,7 @@ const Test: React.FC = () => {
         <button onClick={() => onCLickPrevious()}>
           {currentPage != 1 ? "< previous " : ""}
         </button>
-        <p>{currentPage}</p>
+        <p>{currentPage + "/" + demoDataTest.tasks.length}</p>
         <button onClick={() => onCLickNext()}>
           {currentPage < demoDataTest.tasks.length ? "next >" : "Finish 🏁"}
         </button>
