@@ -1,3 +1,4 @@
+import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
 import React from "react";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
 import Timer from "../../components/Timer";
@@ -250,44 +251,43 @@ const Test: React.FC = () => {
     }
   };
 
-  const onFinish = () : any => {
+  const onFinish = (): any => {
     let result = 0;
     for (let i = 0; i < demoDataTest.tasks.length; i++) {
       if (demoDataTest.tasks[i].correctAnswer === answers[i]) {
         result++;
       }
     }
-    navigate('./'+ result + '-' + demoDataTest.tasks.length);
+    navigate("./" + result + "-" + demoDataTest.tasks.length);
   };
 
   return (
     <div className={styles.page}>
-      <div className={styles.timer}>
-        {<Timer onTimeOver={onFinish}/>}
-      </div>
+      <div className={styles.timer}>{<Timer onTimeOver={onFinish} />}</div>
       <div className={styles.task}>
         <div className={styles.questionContainer}>
           <h4 className={styles.question}>
             {demoDataTest.tasks[currentPage - 1]?.question}
           </h4>
         </div>
-        <div className={styles.options}>
+        <RadioGroup
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue={currentAnswer}
+          name="radio-buttons-group"
+        >
           {demoDataTest.tasks[currentPage - 1]?.options.map((option) => {
             return (
-              <div key={option.split(" ").join() + currentPage}>
-                <input
-                  type={"radio"}
-                  id={option.split(" ").join()}
-                  name={demoDataTest.tasks[currentPage - 1]?.question}
-                  onChange={() => onChangeRadio(option)}
-                  defaultChecked={currentAnswer === option}
-                />
-                <label htmlFor={option.split(" ").join()}>{option}</label>
-                <br />
-              </div>
+              <FormControlLabel
+                key={option.split(" ").join() + currentPage}
+                value={option}
+                control={<Radio />}
+                label={option}
+                onChange={() => onChangeRadio(option)}
+                checked={currentAnswer === option}
+              />
             );
           })}
-        </div>
+        </RadioGroup>
       </div>
       <div className={styles.control}>
         <button onClick={() => onCLickPrevious()}>
