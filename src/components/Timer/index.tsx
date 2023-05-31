@@ -9,7 +9,7 @@ const Timer: React.FC<TimerType> = ({onTimeOver}) => {
   const [minutes, setMinutes] = React.useState(30);
   const [seconds, setSeconds] = React.useState(0);
 
-  const deadline = Date.now() + 30 * 60 * 1000;
+  const deadline = Date.now() + 15 * 60 * 1000;
 
   const getTime = () => {
     const time = deadline - Date.now();
